@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnalisation de l'IA pour le secteur juridique : guide complet pour les cabinets d'avocats | Gilbert</title>
+    <meta name="description" content="Découvrez comment configurer Gilbert, l'IA française de comptes rendus, pour qu'elle s'adapte parfaitement aux besoins spécifiques des cabinets d'avocats et maîtrise le vocabulaire juridique.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-rgb: 79, 70, 229;
+            --secondary: #9333EA;
+            --secondary-rgb: 147, 51, 234;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --background: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.7;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 1.5rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        
+        .article-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background-color: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .article-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--text-dark);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-content .highlight {
+            background-color: rgba(var(--primary-rgb), 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .article-content .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-content .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #eaeaea;
+            margin: 2rem 0;
+        }
+        
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .back-to-blog i {
+            margin-right: 0.5rem;
+        }
+        
+        .case-study {
+            background-color: rgba(var(--primary-rgb), 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .feature-box {
+            background-color: rgba(var(--primary-rgb), 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .feature-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .highlight-text {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .step-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .step-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-box h3 .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/img/logo_gilbert.png" alt="Logo Gilbert" class="main-logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html#features">Fonctionnalités</a>
+                <a href="../index.html#demo">Démonstration</a>
+                <a href="../index.html#testimonials">Témoignages</a>
+                <a href="../index.html#pricing">Tarifs</a>
+                <a href="../blog.html" class="active">Blog</a>
+                <button class="cta-button secondary">Connexion</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Hero Section -->
+    <section class="blog-hero" style="background: linear-gradient(135deg, #2c3e8c 0%, #3951c6 60%, #4a63d2 100%); padding: 6rem 0 3rem; color: white; position: relative; overflow: hidden;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="display: inline-block; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                🇫🇷 BLOG GILBERT
+            </div>
+            <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; max-width: 800px;">Personnalisation de l'IA pour le secteur juridique : guide complet pour les cabinets d'avocats</h1>
+            <div style="display: flex; align-items: center; margin-top: 2rem;">
+                <img src="../assets/images/martial.jpg" alt="Martial Roberge" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 1rem;">
+                <div>
+                    <div style="font-weight: 600;">Martial Roberge</div>
+                    <div style="opacity: 0.8; font-size: 0.9rem;">10 mai 2025 · Personnalisation</div>
+                </div>
+            </div>
+        </div>
+        <!-- Du00e9corative circles -->
+        <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); z-index: 1;"></div>
+        <div style="position: absolute; bottom: -50px; left: 10%; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); z-index: 1;"></div>
+    </section>
+
+    <main>
+        <div class="article-content">
+            <a href="../blog.html" class="back-to-blog"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+            
+            <article>
+                <p><strong>La rigueur du droit ne tolère ni approximation, ni perte d'information.</strong> Dans un contexte où la productivité et la précision sont essentielles, les cabinets d'avocats peuvent désormais s'appuyer sur une IA entièrement <strong>adaptée à leur vocabulaire métier</strong>, à leurs usages et à leurs contraintes de confidentialité.</p>
+                
+                <p>Voici comment <strong>configurer Gilbert</strong>, l'IA française spécialisée en comptes rendus, pour qu'elle devienne un véritable assistant juridique.</p>
+                
+                <hr>
+                
+                <h2>Pourquoi personnaliser une IA pour le secteur juridique ?</h2>
+                
+                <p>Le langage juridique est codifié, précis, et souvent chargé de subtilités. Une IA non entraînée aux spécificités du droit peut générer :</p>
+                
+                <ul>
+                    <li>Des contresens dans les notes ou synthèses</li>
+                    <li>Des pertes d'informations clés</li>
+                    <li>Une baisse de confiance des collaborateurs</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p>👉 <strong>Personnaliser l'IA</strong>, c'est garantir des comptes rendus exploitables, exacts et réutilisables pour la rédaction d'actes, d'e-mails ou de mémos internes.</p>
+                </div>
+                
+                <hr>
+                
+                <h2>Ce que permet une IA juridique personnalisée</h2>
+                
+                <p>Avec <strong>Gilbert</strong>, vous pouvez configurer votre assistant pour qu'il :</p>
+                
+                <div class="feature-box">
+                    <h3>Maîtrise les termes juridiques</h3>
+                    <p>Reconnaissance précise du vocabulaire spécialisé : assignation, plaidoirie, jurisprudence, ordonnance, mise en demeure, etc.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>Reconnaît les structures typiques</h3>
+                    <p>Adaptation aux formats spécifiques des réunions juridiques : audiences, rendez-vous client, arbitrages, négociations...</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>Génère des comptes rendus structurés</h3>
+                    <p>Création automatique de documents organisés selon vos modèles internes et vos conventions de rédaction.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>Intègre des templates personnalisés</h3>
+                    <p>Utilisation de vos propres modèles : compte rendu d'audience, PV de réunion, fiches de suivi client...</p>
+                </div>
+                
+                <hr>
+                
+                <h2>Comment configurer Gilbert pour un cabinet d'avocats</h2>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">1</span> Définir un lexique juridique personnalisé</h3>
+                    <p>Importez votre glossaire maison ou vos précédents documents pour guider l'IA dans la reconnaissance des termes métiers. Gilbert peut également apprendre de vos corrections pour améliorer continuellement sa compréhension du vocabulaire spécifique à votre domaine de pratique.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">2</span> Choisir un format de rendu adapté</h3>
+                    <p>Définissez une structure de sortie personnalisée incluant les éléments essentiels à votre pratique : parties prenantes, faits, décisions, actions à engager, délais, références juridiques, etc.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">3</span> Sécuriser les flux</h3>
+                    <p>Gilbert garantit un hébergement en France, un chiffrement des échanges de bout en bout, et une politique stricte de non-exploitation des données, conformément aux exigences de confidentialité du secteur juridique.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">4</span> Ajouter des règles de confidentialité</h3>
+                    <p>Activez l'option "confidentialité renforcée" qui supprime automatiquement les fichiers audio après transcription et permet de masquer certaines informations sensibles dans les comptes rendus.</p>
+                </div>
+                
+                <hr>
+                
+                <h2>Cas d'usage concret</h2>
+                
+                <div class="case-study">
+                    <h3>➡️ Cabinet en droit des affaires, Paris (12 collaborateurs)</h3>
+                    <ul>
+                        <li><strong>Réduction de 80% du temps de rédaction post-réunion</strong></li>
+                        <li><strong>Gain estimé :</strong> +4 heures par semaine / juriste</li>
+                        <li><strong>Amélioration du suivi client :</strong> comptes rendus envoyés sous 10 min après l'échange</li>
+                    </ul>
+                    <blockquote>
+                        <p>"Gilbert nous a permis de transformer nos réunions client en véritables outils de travail. Les comptes rendus sont précis, structurés et immédiatement exploitables pour la suite de nos dossiers." - Maître Sophie Durand, Associée</p>
+                    </blockquote>
+                </div>
+                
+                <hr>
+                
+                <h2>Conclusion : une IA qui comprend votre métier</h2>
+                
+                <p>Gilbert n'est pas une IA générique. C'est <strong>un assistant sur mesure</strong>, souverain, capable de comprendre les enjeux du monde juridique et de s'y adapter.</p>
+                
+                <p><strong>💡 Téléchargez notre guide de configuration juridique ou essayez gratuitement Gilbert pendant 14 jours.</strong></p>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="../index.html#tarifs" class="cta-button">Essayer Gilbert gratuitement</a>
+                    <a href="#" class="cta-button" style="background: white; color: var(--primary); border: 1px solid var(--primary);">Télécharger le guide juridique</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.svg" alt="Gilbert Logo">
+                    <p>Comprendre. Structurer.<br>Comme vous l'auriez fait.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Produit</h3>
+                        <ul>
+                            <li><a href="../index.html#fonctionnalites">Fonctionnalitu00e9s</a></li>
+                            <li><a href="../index.html#demo">Du00e9mo</a></li>
+                            <li><a href="../index.html#tarifs">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Ressources</h3>
+                        <ul>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Entreprise</h3>
+                        <ul>
+                            <li><a href="#">u00c0 propos</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+                            <li><a href="#">Carriu00e8res</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Lu00e9gal</h3>
+                        <ul>
+                            <li><a href="#">Confidentialitu00e9</a></li>
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="#">Mentions lu00e9gales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gilbert. Tous droits ru00e9servu00e9s.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir Ambassadeur Gilbert - Programme d'ambassadeurs</title>
+    <meta name="description" content="Rejoignez le programme d'ambassadeurs Gilbert et participez à la révolution des comptes rendus de réunion avec l'IA française.">
+    <link rel="icon" href="assets/images/img/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for the ambassador page */
+        body {
+            overflow-x: hidden;
+            padding-top: 90px;
+        }
+        
+        /* Styles pour le header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(125deg, #1a3cad 0%, #2b5cc5 40%, #4a78d3 80%, #6a95e0 100%);
+            padding: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        header nav {
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header .logo img {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        
+        header .nav-links a {
+            color: white;
+            font-weight: 500;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Changer la couleur au survol pour qu'elle soit blanche avec un effet de luminositu00e9 */
+        header .nav-links a:hover {
+            color: white;
+            filter: brightness(1.3);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        nav .nav-links a {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .logo img {
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Advanced animated background elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .animated-shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+            opacity: 0.6;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            backdrop-filter: blur(5px);
+        }
+        
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: 5%;
+            animation-delay: 3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 30%;
+            left: 15%;
+            animation-delay: 6s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-4 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 9s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-5 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            right: 30%;
+            animation-delay: 12s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-6 {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            left: 40%;
+            animation-delay: 15s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite linear;
+        }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(20px, 20px) rotate(5deg) scale(1.05); }
+            50% { transform: translate(0, 40px) rotate(0deg) scale(1); }
+            75% { transform: translate(-20px, 20px) rotate(-5deg) scale(0.95); }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        }
+        
+        /* Modern hero section with 3D effects */
+        .ambassador-hero {
+            background: linear-gradient(125deg, #1a3cad 0%, #2b5cc5 40%, #4a78d3 80%, #6a95e0 100%);
+            color: white;
+            padding: 50px 0 100px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 -50px 100px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+        }
+        
+        .ambassador-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/img/pattern-dots.png');
+            opacity: 0.08;
+            z-index: 0;
+            animation: subtle-shift 30s infinite alternate ease-in-out;
+        }
+        
+        .ambassador-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, rgba(26, 60, 173, 0.3) 0%, transparent 100%);
+            z-index: 0;
+        }
+        
+        @keyframes subtle-shift {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-20px) translateY(20px); }
+        }
+        
+        .ambassador-hero .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            perspective: 1000px;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 30px;
+            transform-style: preserve-3d;
+            position: relative;
+            z-index: 2;
+            margin-top: -40px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-image {
+            flex: 1;
+            max-width: 850px;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            transform: translateZ(0) translateY(-70px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.8s;
+            height: 450px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Nouvelle implémentation pour l'interface avec des coins arrondis parfaits */
+        .interface-container {
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotateY(-15deg) rotateX(10deg) translateZ(-100px) scale(1.1);
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            transition: all 0.8s ease;
+            z-index: 1;
+            border-radius: 15px;
+            overflow: visible;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: auto;
+        }
+        
+        .interface-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/interface_dashboard.png');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(43, 92, 197, 0.05);
+            opacity: 0.85;
+            border-radius: 15px;
+            overflow: hidden;
+            filter: blur(1.5px) brightness(0.95);
+            transition: filter 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .ambassadors-gallery {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            z-index: 2;
+        }
+        
+        .ambassador-profile {
+            position: absolute;
+            width: 85px;
+            height: 85px;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: profileFadeIn 1.5s forwards;
+            opacity: 0;
+            z-index: 10;
+            border-radius: 50%;
+            overflow: visible;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .profile-username {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(43, 92, 197, 0.8);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+        
+        .ambassador-profile:hover .profile-username {
+            opacity: 1;
+            transform: translateX(-50%) scale(1.1);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            transition: all 0.5s ease;
+            transform: scale(1.05);
+        }
+        
+        .ambassador-profile:hover .profile-img {
+            transform: scale(1.15);
+            border-color: #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        .profile-1 {
+            top: 15%;
+            left: 25%;
+            transform: translateZ(120px);
+            animation-delay: 0.2s;
+            z-index: 10;
+        }
+        
+        .profile-2 {
+            top: -15%;
+            left: 65%;
+            transform: translateZ(150px);
+            animation-delay: 0.4s;
+            z-index: 11;
+        }
+        
+        .profile-3 {
+            top: 30%;
+            left: 85%;
+            transform: translateZ(90px);
+            animation-delay: 0.6s;
+            z-index: 9;
+        }
+        
+        .profile-4 {
+            top: 70%;
+            left: 60%;
+            transform: translateZ(130px);
+            animation-delay: 0.8s;
+            z-index: 10;
+        }
+        
+        .profile-5 {
+            top: 80%;
+            left: 20%;
+            transform: translateZ(110px);
+            animation-delay: 1s;
+            z-index: 9;
+        }
+        
+        .profile-6 {
+            top: 20%;
+            left: -5%;
+            transform: translateZ(140px);
+            animation-delay: 1.2s;
+            z-index: 11;
+        }
+        
+        .profile-7 {
+            top: 45%;
+            left: 10%;
+            transform: translateZ(125px);
+            animation-delay: 1.4s;
+            z-index: 10;
+        }
+        
+        @keyframes profileFadeIn {
+            0% { opacity: 0; transform: translateZ(0) scale(0.8); }
+            100% { opacity: 1; transform: translateZ(var(--z-value, 100px)) scale(1); }
+        }
+        
+        .hero-image:hover .interface-container {
+            transform: translate(-50%, -50%) rotateY(-5deg) rotateX(5deg) translateZ(-50px) scale(1.1);
+        }
+        
+        .hero-image:hover .interface-background {
+            opacity: 1;
+            filter: blur(0) brightness(1.1);
+        }
+        
+        .hero-image:hover .ambassador-profile {
+            transform: scale(1.15);
+        }
+        
+        /* Rotations alu00e9atoires pour les profils */
+        .profile-1 { transform: rotate(-5deg) translateZ(120px); }
+        .profile-2 { transform: rotate(8deg) translateZ(150px); }
+        .profile-3 { transform: rotate(-12deg) translateZ(90px); }
+        .profile-4 { transform: rotate(6deg) translateZ(130px); }
+        .profile-5 { transform: rotate(-7deg) translateZ(110px); }
+        .profile-6 { transform: rotate(10deg) translateZ(140px); }
+        .profile-7 { transform: rotate(-9deg) translateZ(125px); }
+        
+        /* Effet de suivi du curseur */
+        .hero-image.active .ambassadors-gallery {
+            transition: transform 0.1s ease-out;
+        }
+        
+        .hero-image.active .interface-container {
+            transition: transform 0.2s ease-out;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite, float-badge 6s infinite ease-in-out;
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+        }
+        
+        .hero-badge i {
+            margin-right: 8px;
+            color: #ffdd00;
+            animation: star-pulse 2s infinite;
+        }
+        
+        @keyframes star-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        
+        @keyframes float-badge {
+            0% { transform: translateZ(20px) translateY(0); }
+            50% { transform: translateZ(20px) translateY(-10px); }
+            100% { transform: translateZ(20px) translateY(0); }
+        }
+        
+        .ambassador-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(to right, #ffffff, #d0e0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transform-style: preserve-3d;
+            transform: translateZ(30px);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.3s;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-title {
+            display: inline-block;
+            margin-left: 10px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .title-logo {
+            height: 70px;
+            transform: rotate(-5deg) translateY(-5px);
+            filter: brightness(0) invert(1) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+            transition: all 0.5s ease;
+            animation: logoFloat 3s ease-in-out infinite;
+            position: relative;
+            opacity: 0.9;
+        }
+        
+        .logo-title {
+            display: inline-block;
+            margin-left: 10px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .title-logo {
+            height: 60px;
+            transform: rotate(-3deg) translateY(-2px);
+            filter: brightness(0) invert(1) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
+            transition: all 0.3s ease;
+        }
+        
+        .title-logo:hover {
+            transform: rotate(-5deg) translateY(-4px);
+            filter: brightness(0) invert(1) drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
+        }
+        
+        .ambassador-hero p {
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateZ(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.6s;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.9s;
+            transform: translateZ(20px);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-cta .cta-button {
+            padding: 18px 36px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-cta .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+            z-index: -1;
+            transition: all 0.4s ease;
+            transform: translateY(100%);
+        }
+        
+        .hero-cta .cta-button:hover:before {
+            transform: translateY(0);
+        }
+        
+        .hero-cta .cta-button.primary {
+            background: linear-gradient(45deg, #2b5cc5, #4a78d3);
+            border: none;
+            box-shadow: 0 10px 25px rgba(43, 92, 197, 0.4), 0 0 0 0 rgba(43, 92, 197, 0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 25px rgba(43, 92, 197, 0.4), 0 0 0 0 rgba(43, 92, 197, 0.8);
+            }
+            70% {
+                box-shadow: 0 10px 25px rgba(43, 92, 197, 0.4), 0 0 0 15px rgba(43, 92, 197, 0);
+            }
+            100% {
+                box-shadow: 0 10px 25px rgba(43, 92, 197, 0.4), 0 0 0 0 rgba(43, 92, 197, 0);
+            }
+        }
+        
+        .hero-cta .cta-button.primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(43, 92, 197, 0.5);
+            background: linear-gradient(45deg, #3468d8, #5b89e4);
+        }
+        
+        .hero-cta .cta-button.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-cta .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .hero-cta .cta-button i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .hero-cta .cta-button:hover i {
+            transform: translateX(5px) scale(1.2);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 1.2s;
+        }
+        
+        /* Styles pour la section Timeline */
+        .timeline-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #1a3c8d 0%, #0f2557 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/img/pattern-dots.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .timeline-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(91, 137, 228, 0.3) 0%, rgba(91, 137, 228, 0) 50%),
+                        radial-gradient(circle at 30% 70%, rgba(52, 104, 216, 0.3) 0%, rgba(52, 104, 216, 0) 50%);
+            pointer-events: none;
+        }
+        
+        .timeline-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 5s infinite;
+            box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
+        }
+        
+        .star:nth-child(odd) {
+            width: 3px;
+            height: 3px;
+        }
+        
+        .star:nth-child(3n) {
+            width: 1px;
+            height: 1px;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.8; }
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            opacity: 0.15;
+            filter: blur(3px);
+        }
+        
+        .shape1 {
+            top: 15%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(91, 137, 228, 0.8) 0%, rgba(91, 137, 228, 0) 70%);
+            border-radius: 50%;
+            animation: float1 20s infinite ease-in-out;
+        }
+        
+        .shape2 {
+            bottom: 20%;
+            right: 15%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(52, 104, 216, 0.8) 0%, rgba(52, 104, 216, 0) 70%);
+            border-radius: 50%;
+            animation: float2 25s infinite ease-in-out;
+        }
+        
+        .shape3 {
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(43, 92, 197, 0.5) 0%, rgba(43, 92, 197, 0) 70%);
+            border-radius: 50%;
+            animation: float3 30s infinite ease-in-out;
+        }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 30px); }
+            50% { transform: translate(20px, 60px); }
+            75% { transform: translate(40px, 10px); }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-40px, -20px); }
+            50% { transform: translate(-10px, -50px); }
+            75% { transform: translate(-30px, -10px); }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-30px, 40px); }
+            50% { transform: translate(30px, -30px); }
+            75% { transform: translate(10px, 20px); }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4a78d3;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .section-header .accent {
+            color: #4a78d3;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #2b5cc5, #4a78d3);
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: accentLine 1.5s forwards 0.5s;
+        }
+        
+        @keyframes accentLine {
+            to { transform: scaleX(1); }
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline-container {
+            position: relative;
+            min-height: 800px;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .timeline-track {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(180deg, #5b89e4, #3468d8);
+            box-shadow: 0 0 15px rgba(91, 137, 228, 0.8), 0 0 5px rgba(255, 255, 255, 0.5);
+            transition: height 0.5s ease;
+            border-radius: 0 0 2px 2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .timeline-ball {
+            position: absolute;
+            left: 50%;
+            top: 150px; /* Position initiale plus basse */
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2), 0 0 20px rgba(74, 120, 211, 0.8);
+            z-index: 10;
+            transition: top 0.5s ease;
+        }
+        
+        .timeline-events {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-event {
+            position: relative;
+            margin-bottom: 120px;
+            opacity: 0.4;
+            transition: all 0.5s ease;
+            transform: translateY(30px);
+        }
+        
+        .timeline-event.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-event:nth-child(odd) .event-content {
+            margin-left: auto;
+            text-align: left;
+            padding-left: 60px;
+            padding-right: 20px;
+        }
+        
+        .timeline-event:nth-child(even) .event-content {
+            margin-right: auto;
+            text-align: right;
+            padding-right: 60px;
+            padding-left: 20px;
+        }
+        
+        .event-date {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            background: #4a78d3;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+        }
+        
+        .event-content {
+            position: relative;
+            width: 45%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.5s ease;
+            transform: translateY(20px);
+            opacity: 0.7;
+        }
+        
+        .timeline-event.active .event-content {
+            transform: translateY(0);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            opacity: 1;
+        }
+        
+        .event-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .event-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 0;
+            font-size: 1.05rem;
+        }
+        
+        .event-icon {
+            position: absolute;
+            top: 35px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2b5cc5, #4a78d3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .timeline-event:nth-child(odd) .event-icon {
+            left: -25px;
+        }
+        
+        .timeline-event:nth-child(even) .event-icon {
+            right: -25px;
+        }
+        
+        .timeline-event.active .event-icon {
+            transform: scale(1.2);
+            background: linear-gradient(135deg, #3468d8, #5b89e4);
+            box-shadow: 0 0 0 8px rgba(74, 120, 211, 0.3), 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+
+        
+        .stat-item {
+            transform: translateZ(10px);
+            text-align: center;
+            position: relative;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #ffffff, #d0e0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Fix for text-fill-color warnings */
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .ambassador-hero h1, .stat-number {
+                background: linear-gradient(to right, #ffffff, #d0e0ff);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .ambassador-hero .container {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                max-width: 80%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .ambassador-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                max-width: 100%;
+            }
+        }
+        
+        /* Styles pour la section formulaire - Design amu00e9lioru00e9 */
+        .ambassador-form-section {
+            background: linear-gradient(125deg, #1a3cad 0%, #2b5cc5 40%, #4a78d3 80%, #6a95e0 100%);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .ambassador-form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/img/pattern-dots.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .ambassador-form-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ambassador-form-section h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .ambassador-form-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4dffb4, #4dffb4);
+            border-radius: 2px;
+        }
+        
+        .ambassador-form-section .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .form-container {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0.5;
+            z-index: -1;
+            animation: pulse-glow 15s infinite linear;
+        }
+        
+        @keyframes pulse-glow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ambassador-form {
+            width: 100%;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input, .form-group textarea {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: white;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .checkbox-group {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkbox-group input {
+            width: 24px;
+            height: 24px;
+            accent-color: #4dffb4;
+            cursor: pointer;
+        }
+        
+        .text-link {
+            color: #4dffb4;
+            text-decoration: none;
+            position: relative;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .text-link:hover {
+            text-shadow: 0 0 10px rgba(77, 255, 180, 0.5);
+        }
+        
+        .text-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #4dffb4;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .text-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .form-submit button {
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #4dffb4, #00d9ff);
+            border: none;
+            border-radius: 50px;
+            color: #1a3cad;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(77, 255, 180, 0.3);
+            letter-spacing: 0.5px;
+            z-index: 1;
+        }
+        
+        .form-submit button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #00d9ff, #4dffb4);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+        
+        .form-submit button:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(77, 255, 180, 0.5);
+        }
+        
+        .form-submit button:hover::before {
+            opacity: 1;
+        }
+        
+        .form-submit button i {
+            margin-right: 10px;
+            font-size: 1.1em;
+            animation: rocket-pulse 2s infinite;
+        }
+        
+        @keyframes rocket-pulse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        
+        .form-benefits {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            height: fit-content;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at center, rgba(77, 255, 180, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .form-benefits h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-benefits h3::before {
+            content: '✨';
+            position: absolute;
+            top: -5px;
+            left: -30px;
+            font-size: 1.5rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            padding-left: 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefits-list li:hover {
+            transform: translateX(5px);
+        }
+        
+        .benefits-list i {
+            color: #4dffb4;
+            margin-right: 15px;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(77, 255, 180, 0.5);
+        }
+        
+        @media (max-width: 992px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-benefits {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ambassador-form-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/img/logo_gilbert.png" alt="Logo Gilbert" class="main-logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#features">Fonctionnalités</a>
+                <a href="index.html#demo">Démonstration</a>
+                <a href="index.html#testimonials">Témoignages</a>
+                <a href="index.html#pricing">Tarifs</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section avec implémentation améliorée -->
+        <section class="ambassador-hero" id="hero">
+            <div class="animated-bg">
+                <div class="animated-shape shape-1"></div>
+                <div class="animated-shape shape-2"></div>
+                <div class="animated-shape shape-3"></div>
+                <div class="animated-shape shape-4"></div>
+                <div class="animated-shape shape-5"></div>
+                <div class="animated-shape shape-6"></div>
+                <div class="particles">
+                    <div class="particle" style="left:5%; top:20%; animation-delay:0s;"></div>
+                    <div class="particle" style="left:15%; top:80%; animation-delay:1s;"></div>
+                    <div class="particle" style="left:25%; top:40%; animation-delay:2s;"></div>
+                    <div class="particle" style="left:35%; top:10%; animation-delay:3s;"></div>
+                    <div class="particle" style="left:45%; top:70%; animation-delay:4s;"></div>
+                    <div class="particle" style="left:55%; top:30%; animation-delay:5s;"></div>
+                    <div class="particle" style="left:65%; top:90%; animation-delay:6s;"></div>
+                    <div class="particle" style="left:75%; top:50%; animation-delay:7s;"></div>
+                    <div class="particle" style="left:85%; top:15%; animation-delay:8s;"></div>
+                    <div class="particle" style="left:95%; top:60%; animation-delay:9s;"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i> Programme Exclusif
+                    </div>
+                    <h1>Devenez Ambassadeur <span class="logo-title"><img src="assets/images/img/logo_gilbert.png" alt="Gilbert" class="title-logo"></span></h1>
+                    <p>Rejoignez notre communauté d'ambassadeurs et participez à la révolution des comptes rendus de réunion avec l'IA française et souveraine.</p>
+                    
+                    <div class="hero-cta">
+                        <a href="#ambassador-form" class="cta-button primary"><i class="fas fa-user-plus"></i> Rejoindre le programme</a>
+                        <a href="#ambassador-video" class="cta-button secondary"><i class="fas fa-play-circle"></i> Voir la vidéo</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">120+</div>
+                            <div class="stat-label">Ambassadeurs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15%</div>
+                            <div class="stat-label">Commission</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">350+</div>
+                            <div class="stat-label">Entreprises</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="interface-container">
+                        <div class="interface-background"></div>
+                    </div>
+                    <div class="ambassadors-gallery">
+                        <div class="ambassador-profile profile-1">
+                            <img src="assets/images/img/nicolas_gonzalez.jpg" alt="@nicolas_gonzalez" class="profile-img">
+                            <div class="profile-username">@nicolas_gonzalez</div>
+                        </div>
+                        <div class="ambassador-profile profile-2">
+                            <img src="assets/images/img/matthieu_bergerault.jpg" alt="@matthieu_bergerault" class="profile-img">
+                            <div class="profile-username">@matthieu_bergerault</div>
+                        </div>
+                        <div class="ambassador-profile profile-3">
+                            <img src="assets/images/img/françois_stephan.jpg" alt="@françois_stephan" class="profile-img">
+                            <div class="profile-username">@françois_stephan</div>
+                        </div>
+                        <div class="ambassador-profile profile-4">
+                            <img src="assets/images/img/baptiste_huvelle.jpg" alt="@baptiste_huvelle" class="profile-img">
+                            <div class="profile-username">@baptiste_huvelle</div>
+                        </div>
+                        <div class="ambassador-profile profile-5">
+                            <img src="assets/images/hugo.jpg" alt="@hugo_fouan" class="profile-img">
+                            <div class="profile-username">@hugo_fouan</div>
+                        </div>
+                        <div class="ambassador-profile profile-6">
+                            <img src="assets/images/img/ollivier_bouvet.jpg" alt="@ollivier_bouvet" class="profile-img">
+                            <div class="profile-username">@ollivier_bouvet</div>
+                        </div>
+                        <div class="ambassador-profile profile-7">
+                            <img src="assets/images/img/pierre_louis_thomas.jpg" alt="@pierre_louis_thomas" class="profile-img">
+                            <div class="profile-username">@pierre_louis_thomas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Timeline -->
+        <section class="timeline-section" id="timeline">
+            <div class="timeline-stars">
+                <div class="star" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
+                <div class="star" style="top: 25%; left: 20%; animation-delay: 1s;"></div>
+                <div class="star" style="top: 10%; left: 30%; animation-delay: 2s;"></div>
+                <div class="star" style="top: 35%; left: 40%; animation-delay: 0.5s;"></div>
+                <div class="star" style="top: 20%; left: 50%; animation-delay: 1.5s;"></div>
+                <div class="star" style="top: 40%; left: 60%; animation-delay: 2.5s;"></div>
+                <div class="star" style="top: 15%; left: 70%; animation-delay: 3s;"></div>
+                <div class="star" style="top: 30%; left: 80%; animation-delay: 0.7s;"></div>
+                <div class="star" style="top: 25%; left: 90%; animation-delay: 1.7s;"></div>
+                <div class="star" style="top: 55%; left: 15%; animation-delay: 2.7s;"></div>
+                <div class="star" style="top: 65%; left: 25%; animation-delay: 3.7s;"></div>
+                <div class="star" style="top: 75%; left: 35%; animation-delay: 1.2s;"></div>
+                <div class="star" style="top: 60%; left: 45%; animation-delay: 2.2s;"></div>
+                <div class="star" style="top: 70%; left: 55%; animation-delay: 3.2s;"></div>
+                <div class="star" style="top: 80%; left: 65%; animation-delay: 0.2s;"></div>
+                <div class="star" style="top: 85%; left: 75%; animation-delay: 1.3s;"></div>
+                <div class="star" style="top: 90%; left: 85%; animation-delay: 2.3s;"></div>
+                <div class="star" style="top: 95%; left: 95%; animation-delay: 3.3s;"></div>
+            </div>
+            <div class="floating-shapes">
+                <div class="floating-shape shape1"></div>
+                <div class="floating-shape shape2"></div>
+                <div class="floating-shape shape3"></div>
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Notre Histoire</div>
+                    <h2>L'évolution de <span class="accent">Gilbert</span></h2>
+                    <p class="section-subtitle">Découvrez notre parcours depuis nos débuts jusqu'à notre vision pour l'avenir</p>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-track">
+                        <div class="timeline-progress"></div>
+                        <div class="timeline-ball"></div>
+                    </div>
+                    
+                    <div class="timeline-events">
+                        <div class="timeline-event" data-year="2022">
+                            <div class="event-date">2022</div>
+                            <div class="event-content">
+                                <h3>Les débuts</h3>
+                                <p>Naissance de l'idée de Gilbert : créer une IA française et souveraine dédiée aux comptes rendus de réunion.</p>
+                                <div class="event-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event" data-year="2023">
+                            <div class="event-date">2023</div>
+                            <div class="event-content">
+                                <h3>Développement du prototype</h3>
+                                <p>Création du premier prototype fonctionnel et tests avec des utilisateurs pilotes dans plusieurs entreprises françaises.</p>
+                                <div class="event-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event active" data-year="2024">
+                            <div class="event-date">2024</div>
+                            <div class="event-content">
+                                <h3>Lancement officiel</h3>
+                                <p>Gilbert est officiellement lancé sur le marché français et européen, avec déjà plus de 350 entreprises utilisatrices.</p>
+                                <div class="event-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event" data-year="2025">
+                            <div class="event-date">2025</div>
+                            <div class="event-content">
+                                <h3>Expansion internationale</h3>
+                                <p>Développement de nouvelles fonctionnalités et expansion vers de nouveaux marchés internationaux tout en préservant notre souveraineté.</p>
+                                <div class="event-icon">
+                                    <i class="fas fa-globe-europe"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event" data-year="2026">
+                            <div class="event-date">2026</div>
+                            <div class="event-content">
+                                <h3>Vision pour l'avenir</h3>
+                                <p>Devenir le leader européen des solutions d'IA pour la productivité en entreprise, avec un écosystème complet d'outils intelligents.</p>
+                                <div class="event-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Formulaire d'inscription -->
+        <section class="ambassador-form-section" id="ambassador-form">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Rejoignez le programme ambassadeur</h2>
+                    <p class="section-subtitle">Remplissez le formulaire ci-dessous pour devenir ambassadeur Gilbert et commencer à partager l'innovation française en matière d'IA.</p>
+                </div>
+                
+                <div class="form-container">
+                    <form id="ambassador-signup-form" class="ambassador-form" onsubmit="return sendEmail(event)">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email professionnel</label>
+                                <input type="email" id="email" name="email" placeholder="votre.email@entreprise.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Entreprise</label>
+                                <input type="text" id="company" name="company" placeholder="Nom de votre entreprise" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="position">Poste</label>
+                                <input type="text" id="position" name="position" placeholder="Votre fonction" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="linkedin">Profil LinkedIn</label>
+                                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/votre-profil" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="motivation">Pourquoi souhaitez-vous devenir ambassadeur?</label>
+                                <textarea id="motivation" name="motivation" rows="4" placeholder="Partagez vos motivations et comment vous pensez contribuer au programme..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">J'accepte les <a href="#" class="text-link">conditions d'utilisation</a> et la <a href="#" class="text-link">politique de confidentialité</a></label>
+                            </div>
+                            
+                            <input type="hidden" name="redirect" value="merci.html">
+                            <input type="hidden" name="subject" value="Nouvelle candidature d'ambassadeur Gilbert">
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="cta-button primary">
+                                <i class="fas fa-rocket"></i> Devenir ambassadeur
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="form-benefits">
+                        <h3>Avantages du programme</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> 15% de commission sur chaque vente générée</li>
+                            <li><i class="fas fa-check-circle"></i> Accès exclusif aux nouvelles fonctionnalités</li>
+                            <li><i class="fas fa-check-circle"></i> Invitation aux événements VIP</li>
+                            <li><i class="fas fa-check-circle"></i> Formation personnalisée sur le produit</li>
+                            <li><i class="fas fa-check-circle"></i> Matériel marketing dédié</li>
+                            <li><i class="fas fa-check-circle"></i> Support prioritaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="assets/images/img/logo_gilbert.png" alt="Logo Gilbert" class="footer-logo">
+                    <p>Gilbert est une solution d'IA française et souveraine dédiée aux comptes rendus de réunions, développée avec une attention particulière à la confidentialité et à la personnalisation.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#features">Fonctionnalités</a></li>
+                        <li><a href="index.html#demo">Démonstration</a></li>
+                        <li><a href="index.html#pricing">Tarifs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> contact@gilbert-ia.fr</p>
+                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gilbert. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Charger une version modifiée du script.js pour cette page -->
+    <script>
+        // Charger d'abord toutes les fonctions du script.js original
+        document.addEventListener('DOMContentLoaded', function() {
+            // Désactiver le comportement sticky du header pour cette page
+            const header = document.querySelector('header');
+            
+            // Appliquer directement les styles pour le header bleu
+            header.style.background = 'linear-gradient(180deg, rgba(26, 60, 141, 0.9) 0%, rgba(26, 60, 141, 0.8) 100%)';
+            
+            // Remplacer l'écouteur d'événement de défilement pour le header
+            window.addEventListener('scroll', function() {
+                // Maintenir le style bleu quelle que soit la position de défilement
+                header.style.background = 'linear-gradient(180deg, rgba(26, 60, 141, 0.95) 0%, rgba(26, 60, 141, 0.9) 100%)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            });
+        });
+    </script>
+    
+    <!-- Charger le script.js original après notre surcharge -->
+    <!-- EmailJS SDK pour l'envoi d'emails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Notre script personnalisé pour le formulaire -->
+    <script src="email-form.js"></script>
+    <!-- Script principal du site -->
+    <script src="script.js"></script>
+    <script>
+        
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Effet de suivi du curseur pour l'interface
+            const heroImage = document.querySelector('.hero-image');
+            const ambassadorsGallery = document.querySelector('.ambassadors-gallery');
+            const interfaceContainer = document.querySelector('.interface-container');
+            
+            if (heroImage && ambassadorsGallery && interfaceContainer) {
+                function handleMouseMove(e) {
+                    const rect = heroImage.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const mouseX = e.clientX - centerX;
+                    const mouseY = e.clientY - centerY;
+                    
+                    // Limiter la rotation pour éviter les mouvements trop brusques
+                    const maxRotation = 8;
+                    const rotateX = Math.max(Math.min(mouseY * -0.01, maxRotation), -maxRotation);
+                    const rotateY = Math.max(Math.min(mouseX * 0.01, maxRotation), -maxRotation);
+                    
+                    // Appliquer des intensités de mouvement différentes pour créer un effet parallaxe
+                    requestAnimationFrame(() => {
+                        ambassadorsGallery.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        interfaceContainer.style.transform = `translate(-50%, -50%) rotateX(${rotateX * 0.5}deg) rotateY(${rotateY * 0.5}deg) translateZ(-100px) scale(1.1)`;
+                        
+                        // Ajouter un effet de mouvement léger aux profils pour plus de dynamisme
+                        document.querySelectorAll('.ambassador-profile').forEach((profile, index) => {
+                            const offsetX = (index % 3 - 1) * rotateY * 0.4;
+                            const offsetY = (Math.floor(index / 3) - 1) * rotateX * 0.4;
+                            const baseRotation = profile.classList[1] === 'profile-1' ? -5 : 
+                                               profile.classList[1] === 'profile-2' ? 8 : 
+                                               profile.classList[1] === 'profile-3' ? -12 : 
+                                               profile.classList[1] === 'profile-4' ? 6 : 
+                                               profile.classList[1] === 'profile-5' ? -7 : 10;
+                            const rotateZ = baseRotation + (rotateX + rotateY) * 0.05;
+                            profile.style.transform = `translateX(${offsetX}px) translateY(${offsetY}px) translateZ(${120 + index * 15}px) rotate(${rotateZ}deg)`;
+                        });
+                    });
+                }
+                
+                function handleMouseLeave() {
+                    heroImage.classList.remove('active');
+                    
+                    // Transition douce vers la position initiale
+                    ambassadorsGallery.style.transition = 'transform 0.8s ease-out';
+                    interfaceContainer.style.transition = 'transform 0.8s ease-out';
+                    
+                    requestAnimationFrame(() => {
+                        ambassadorsGallery.style.transform = '';
+                        interfaceContainer.style.transform = 'translate(-50%, -50%) rotateY(-15deg) rotateX(10deg) translateZ(-100px) scale(1.1)';
+                        
+                        // Réinitialiser la position des profils en conservant leur rotation de base
+                        document.querySelectorAll('.ambassador-profile').forEach((profile, index) => {
+                            const baseRotation = profile.classList[1] === 'profile-1' ? -5 : 
+                                               profile.classList[1] === 'profile-2' ? 8 : 
+                                               profile.classList[1] === 'profile-3' ? -12 : 
+                                               profile.classList[1] === 'profile-4' ? 6 : 
+                                               profile.classList[1] === 'profile-5' ? -7 : 10;
+                            profile.style.transform = `rotate(${baseRotation}deg) translateZ(${100 + index * 10}px)`;
+                        });
+                    });
+                    
+                    // Réinitialiser la transition après l'animation
+                    setTimeout(() => {
+                        ambassadorsGallery.style.transition = '';
+                        interfaceContainer.style.transition = '';
+                    }, 800);
+                }
+                
+                heroImage.addEventListener('mousemove', handleMouseMove);
+                heroImage.addEventListener('mouseenter', () => {
+                    heroImage.classList.add('active');
+                    ambassadorsGallery.style.transition = 'transform 0.1s ease-out';
+                    interfaceContainer.style.transition = 'transform 0.1s ease-out';
+                });
+                heroImage.addEventListener('mouseleave', handleMouseLeave);
+            }
+        });
+    </script>
+
+    <!-- Script pour la timeline interactive -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Éléments de la timeline
+            const timelineSection = document.querySelector('.timeline-section');
+            const timelineTrack = document.querySelector('.timeline-track');
+            const timelineProgress = document.querySelector('.timeline-progress');
+            const timelineBall = document.querySelector('.timeline-ball');
+            const timelineEvents = document.querySelectorAll('.timeline-event');
+            
+            // Positions des événements sur la timeline (en pourcentage de la hauteur)
+            const eventPositions = [0.2, 0.35, 0.5, 0.65, 0.8];
+            
+            // Fonction pour mettre à jour la timeline en fonction du scroll
+            function updateTimeline() {
+                if (!timelineSection) return;
+                
+                const sectionRect = timelineSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
+                const sectionHeight = sectionRect.height;
+                const windowHeight = window.innerHeight;
+                const trackHeight = timelineTrack.offsetHeight;
+                
+                // Calcul de la position visible de la timeline dans la fenêtre
+                // 0 quand le haut de la section est au bas de la fenêtre
+                // 1 quand le bas de la section est au haut de la fenêtre
+                let scrollProgress = 0;
+                
+                if (sectionTop <= 0 && sectionTop >= -sectionHeight + windowHeight) {
+                    // La section est partiellement visible dans la fenêtre
+                    scrollProgress = Math.abs(sectionTop) / (sectionHeight - windowHeight);
+                } else if (sectionTop > 0 && sectionTop < windowHeight) {
+                    // Le haut de la section est visible mais pas encore scrollé complètement
+                    scrollProgress = 0;
+                } else if (sectionTop <= -sectionHeight + windowHeight) {
+                    // La section est presque entièrement scrollée
+                    scrollProgress = 1;
+                }
+                
+                // Limiter la progression entre 0 et 1
+                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+                
+                // Calculer la position idéale de la boule sur la timeline
+                const idealBallPosition = scrollProgress * trackHeight;
+
+                
+                // Calculer la position de la boule par rapport à la fenêtre
+                const timelineTrackRect = timelineTrack.getBoundingClientRect();
+                const ballPositionInWindow = timelineTrackRect.top + idealBallPosition;
+                
+                // Ajuster la position pour que la boule reste visible dans la partie centrale de l'écran
+                const centerOffset = windowHeight * 0.5; // Position à 50% du haut de la fenêtre (centre)
+                
+                // Si la boule est trop haute ou trop basse dans la fenêtre, ajuster sa position
+                let adjustedBallPosition = idealBallPosition;
+                
+                if (ballPositionInWindow < centerOffset && scrollProgress > 0) {
+                    // La boule est trop haute, la déplacer vers le bas
+                    adjustedBallPosition = idealBallPosition + (centerOffset - ballPositionInWindow);
+                } else if (ballPositionInWindow > windowHeight - centerOffset && scrollProgress < 1) {
+                    // La boule est trop basse, la déplacer vers le haut
+                    adjustedBallPosition = idealBallPosition - (ballPositionInWindow - (windowHeight - centerOffset));
+                }
+                
+                // Limiter la position de la boule à la hauteur de la timeline
+                adjustedBallPosition = Math.max(0, Math.min(trackHeight, adjustedBallPosition));
+                
+                // Appliquer la position
+                timelineBall.style.top = `${adjustedBallPosition}px`;
+                
+                // Mettre u00e0 jour la hauteur de la barre de progression pour qu'elle s'arru00eate u00e0 la boule
+                const progressHeight = (adjustedBallPosition / trackHeight) * 100;
+                timelineProgress.style.height = `${progressHeight}%`;
+                
+                // Activer les événements en fonction de la position de la boule
+                // Calculer la position relative de la boule (0 à 1)
+                const ballRelativePosition = adjustedBallPosition / trackHeight;
+                
+                // Activer les événements en fonction de la position de la boule
+                timelineEvents.forEach((event, index) => {
+                    // Utiliser les positions prédéfinies pour chaque événement
+                    const eventPosition = eventPositions[index];
+                    const threshold = 0.1; // Marge de tolérance
+                    
+                    // Activer l'événement si la boule est proche de sa position
+                    if (Math.abs(ballRelativePosition - eventPosition) < threshold || ballRelativePosition > eventPosition) {
+                        event.classList.add('active');
+                    } else {
+                        event.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Mettre à jour la timeline au chargement
+            updateTimeline();
+            
+            // Mettre à jour la timeline lors du scroll
+            window.addEventListener('scroll', function() {
+                updateTimeline();
+            });
+            
+            // Animation interactive au survol des événements
+            timelineEvents.forEach(event => {
+                event.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.event-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.3) rotate(360deg)';
+                    }
+                });
+                
+                event.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.event-icon');
+                    if (icon) {
+                        if (this.classList.contains('active')) {
+                            icon.style.transform = 'scale(1.2)';
+                        } else {
+                            icon.style.transform = 'scale(1)';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
