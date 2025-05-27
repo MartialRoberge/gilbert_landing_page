@@ -25,7 +25,7 @@
                 <a href="#testimonials">Témoignages</a>
                 <a href="#pricing">Tarifs</a>
                 <a href="blog.html">Blog</a>
-                <a href="ambassadeur.html" class="cta-button secondary">🚀 Devenir ambassadeur</a>
+                <a href="ambassadeur.html" class="cta-button secondary">Devenir ambassadeur</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -38,20 +38,157 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
+            <!-- Éléments d'animation pour le fond -->
+            <div class="animated-bg-element" style="position: absolute; top: 15%; left: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(100, 149, 237, 0.6) 0%, rgba(65, 105, 225, 0.3) 50%, transparent 70%); border-radius: 50%; z-index: 2; animation: float1 20s ease-in-out infinite alternate;"></div>
+            <div class="animated-bg-element" style="position: absolute; bottom: 20%; right: 5%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(100, 149, 237, 0.5) 0%, rgba(65, 105, 225, 0.25) 50%, transparent 70%); border-radius: 50%; z-index: 2; animation: float2 15s ease-in-out infinite alternate;"></div>
+            <div class="animated-bg-element" style="position: absolute; top: 40%; right: 25%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 70%); border-radius: 50%; z-index: 2; animation: float3 18s ease-in-out infinite alternate;"></div>
+            
+            <style>
+                @keyframes float1 {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+                    50% { transform: translate(50px, -40px) scale(1.2); opacity: 0.8; }
+                    100% { transform: translate(-40px, 60px) scale(0.9); opacity: 0.6; }
+                }
+                @keyframes float2 {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+                    50% { transform: translate(-60px, 40px) scale(1.25); opacity: 0.7; }
+                    100% { transform: translate(50px, -50px) scale(0.95); opacity: 0.5; }
+                }
+                @keyframes float3 {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+                    50% { transform: translate(40px, 60px) scale(1.15); opacity: 0.6; }
+                    100% { transform: translate(-50px, -40px) scale(0.9); opacity: 0.4; }
+                }
+                
+                /* Styles pour la section de tarification */
+                /* Styles pour la section de tarification */
+                .pricing-grid {
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    margin-top: 40px;
+                }
+                
+                .pricing-card {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    background: white;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+                    overflow: hidden;
+                    padding: 25px;
+                    margin: 10px;
+                    border-top: 5px solid transparent;
+                    flex: 1;
+                    max-width: 400px;
+                }
+                
+                .pricing-card:first-child {
+                    border-top-color: #4a63d2;
+                }
+                
+                .pricing-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                }
+                
+                .pricing-card.enterprise-card {
+                    background: linear-gradient(135deg, rgba(244, 246, 255, 0.95) 0%, rgba(238, 234, 255, 0.95) 100%);
+                    transform: scale(1.02);
+                    z-index: 2;
+                    box-shadow: 0 15px 30px rgba(57, 81, 198, 0.15);
+                    border-top-color: #4a63d2;
+                }
+                
+                .pricing-features i {
+                    color: #4a63d2;
+                    width: 20px;
+                    margin-right: 10px;
+                    text-align: center;
+                    opacity: 0.9;
+                }
+                
+                .pricing-icon svg {
+                    width: 24px;
+                    height: 24px;
+                }
+                
+                .beta-badge {
+                    background-color: #3951c6;
+                    color: white;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
+                    font-size: 13px;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    display: inline-block;
+                }
+                
+                .price {
+                    margin: 15px 0;
+                }
+                
+                .amount {
+                    font-size: 36px;
+                    font-weight: 700;
+                    color: #3951c6;
+                    display: block;
+                    margin-bottom: 3px;
+                }
+                
+                .period {
+                    color: #666;
+                    font-size: 14px;
+                }
+                
+                .pricing-card-header {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                
+                .pricing-card-header h3 {
+                    font-size: 24px;
+                    margin: 0;
+                    color: #3951c6;
+                    font-weight: 700;
+                }
+                
+                .pricing-features {
+                    margin: 20px 0;
+                }
+                
+                .pricing-features li {
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                }
+                
+                /* Style pour agrandir les boutons */
+                .pricing-card .cta-button.primary.full-width {
+                    padding: 12px 20px;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    transition: all 0.3s ease;
+                }
+                
+                .pricing-card .cta-button.primary.full-width:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 20px rgba(57, 81, 198, 0.2);
+                }
+            </style>
 
             <div class="container">
                 <div class="row">
                     <div class="hero-content">
-                        <div class="logo-mark">
-                            <div class="gilbert-icon">📝</div>
-                            <div class="gilbert-pulse"></div>
-                        </div>
+
                         <div class="badge">🇫🇷 100% SOUVERAIN</div>
                         <h1>COMPTES RENDUS<br>DE RÉUNION <span class="highlight">SUR-MESURE</span></h1>
                         <p class="subtitle">Gilbert est la première IA française qui génère automatiquement des comptes rendus personnalisés de vos réunions.</p>
                         <div class="cta-buttons">
                             <a href="#demo" class="cta-button primary"><i class="fas fa-play-circle"></i> Voir en action</a>
-                            <a href="#contact" class="cta-button secondary"><i class="fas fa-envelope"></i> Essai gratuit</a>
+                            <a href="ambassadeur.html" class="cta-button secondary"><i class="fas fa-user-plus"></i> Devenir ambassadeur</a>
                         </div>
                         <div class="hero-benefits">
                             <div class="benefit-badge"><i class="fas fa-check"></i> <strong>Gain de temps : 3h/semaine</strong></div>
@@ -73,6 +210,8 @@
         <section class="trusted-by">
             <div class="container">
                 <h3 class="trusted-title">Ils nous font confiance</h3>
+                
+
                 <div class="trusted-logos">
                     <div class="logo-item"><img src="assets/images/logo_CBC-1.webp" alt="Logo CBC" /></div>
                     <div class="logo-item"><img src="assets/images/logo_consortium-1.webp" alt="Logo Consortium" /></div>
@@ -83,6 +222,12 @@
                     <div class="logo-item logo-item-il"><img src="assets/images/logo_IL.webp" alt="Logo IL" /></div>
                     <div class="logo-item"><img src="assets/images/st-microelectronics.png" alt="Logo ST Microelectronics" /></div>
                     <div class="logo-item"><img src="assets/images/img/eiffel.png" alt="Logo Eiffel Investment Group" /></div>
+                </div>
+                
+                <!-- Soutenu par BPI Deeptech -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="font-size: 18px; margin-bottom: 15px; color: #666; font-weight: 500;">Soutenu par</p>
+                    <img src="assets/images/img/bpi_deeptech.png" alt="BPI Deeptech" style="max-width: 300px; height: auto;">
                 </div>
             </div>
         </section>
@@ -145,6 +290,8 @@
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </section>
 
@@ -384,61 +531,57 @@
         <!-- Pricing Section -->
         <section class="pricing" id="pricing">
             <div class="container">
-                <h2 class="section-title">Une tarification adaptée à vos besoins</h2>
-                <p class="section-subtitle">Choisissez la formule qui correspond le mieux à votre organisation</p>
+                <h2 class="section-title">Tarification</h2>
+                <p class="section-subtitle">Solutions adaptées aux besoins de votre organisation</p>
                 
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <div class="beta-badge">Programme Bêta</div>
-                        <div class="pricing-card-header">
-                            <div class="pricing-icon startup">
-                                <span class="emoji-icon">🚀</span>
-                            </div>
+                        <div style="text-align: center; margin-bottom: 45px;">
+                            <div class="beta-badge">Programme Pilote</div>
+                        </div>
+                        <div class="pricing-card-header" style="margin-top: 15px; padding-top: 10px;">
                             <h3>Ambassadeur</h3>
                         </div>
                         <div class="price">
                             <span class="amount">50€</span>
-                            <span class="period">/mois par utilisateur</span>
-                            <span class="discount">-50% pendant 6 mois</span>
+                            <span class="period">/utilisateur/mois</span>
+
                         </div>
                         
                         <ul class="pricing-features">
-                            <li><span class="feature-emoji">🎙️</span> Transcription illimitée</li>
-                            <li><span class="feature-emoji">📝</span> Comptes rendus custom</li>
-                            <li><span class="feature-emoji">📄</span> Exports PDF & Markdown</li>
-                            <li><span class="feature-emoji">📅</span> Intégration calendrier</li>
-                            <li><span class="feature-emoji">🔔</span> Support prioritaire</li>
-                            <li><span class="feature-emoji">🇫🇷</span> Données hébergées en France</li>
-                            <li><span class="feature-emoji">✨</span> Accès aux nouvelles fonctionnalités en avant-première</li>
-                            <li><span class="feature-emoji">🔮</span> Influence sur les futures fonctionnalités</li>
+                            <li><i class="fas fa-microphone"></i> Transcription illimitée</li>
+                            <li><i class="fas fa-file-alt"></i> Comptes rendus personnalisés</li>
+                            <li><i class="fas fa-file-export"></i> Exports PDF & Markdown</li>
+                            <li><i class="fas fa-calendar"></i> Intégration calendrier</li>
+                            <li><i class="fas fa-headset"></i> Support prioritaire</li>
+                            <li><i class="fas fa-server"></i> Données hébergées en France</li>
+                            <li><i class="fas fa-star"></i> Accès aux nouvelles fonctionnalités en avant-première</li>
+                            <li><i class="fas fa-lightbulb"></i> Influence sur les futures fonctionnalités</li>
                         </ul>
                         
-                        <a href="#contact" class="cta-button primary full-width">Devenir Ambassadeur</a>
+                        <a href="ambassadeur.html" class="cta-button primary full-width">Devenir Ambassadeur</a>
                     </div>
                     
-                    <div class="pricing-card featured">
+                    <div class="pricing-card enterprise-card">
                         <div class="pricing-card-header">
-                            <div class="pricing-icon enterprise">
-                                <span class="emoji-icon">🏢</span>
-                            </div>
                             <h3>Enterprise</h3>
                         </div>
                         <div class="price">
                             <span class="amount">Sur mesure</span>
-                            <span class="period">Solution personnalisée</span>
+                            <span class="period">Solution personnalisée pour entreprise</span>
                         </div>
                         
                         <ul class="pricing-features">
-                            <li><span class="feature-emoji">⭐</span> Tous les avantages de l'offre Startup</li>
-                            <li><span class="feature-emoji">🔄</span> Intégrations avec vos outils</li>
-                            <li><span class="feature-emoji">🔌</span> API dédiée et personnalisable</li>
-                            <li><span class="feature-emoji">👥</span> Accompagnement dédié</li>
-                            <li><span class="feature-emoji">🎓</span> Formation des équipes</li>
-                            <li><span class="feature-emoji">🔒</span> SLA garantie 99,9%</li>
-                            <li><span class="feature-emoji">📊</span> Analyse avancée des décisions</li>
+                            <li><i class="fas fa-check-circle"></i> Tous les avantages de l'offre Ambassadeur</li>
+                            <li><i class="fas fa-plug"></i> Intégrations avec vos outils</li>
+                            <li><i class="fas fa-code"></i> API dédiée et personnalisable</li>
+                            <li><i class="fas fa-users"></i> Accompagnement dédié</li>
+                            <li><i class="fas fa-graduation-cap"></i> Formation des équipes</li>
+                            <li><i class="fas fa-shield-alt"></i> SLA garantie 99,9%</li>
+                            <li><i class="fas fa-chart-line"></i> Analyse avancée des décisions</li>
                         </ul>
                         
-                        <a href="#contact" class="cta-button primary full-width">Demander un devis</a>
+                        <a href="ambassadeur.html#ambassador-form" class="cta-button primary full-width">Demander un devis</a>
                     </div>
                 </div>
             </div>
@@ -452,7 +595,7 @@
                 
                 <div class="cta-buttons">
                     <a href="#demo" class="cta-button primary"><i class="fas fa-play-circle"></i> Voir la démo</a>
-                    <a href="#" class="cta-button secondary"><i class="fas fa-comment"></i> Prendre contact</a>
+                    <a href="ambassadeur.html#ambassador-form" class="cta-button secondary"><i class="fas fa-comment"></i> Prendre contact</a>
                 </div>
             </div>
         </section>
@@ -487,8 +630,7 @@
                 
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> contact@gilbert-ia.fr</p>
-                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p><i class="fas fa-phone"></i> 07 50 94 75 43</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
