@@ -2179,11 +2179,13 @@ video::-webkit-media-controls-panel {
 
 /* Style pour le dernier groupe qui peut avoir moins de 3 témoignages */
 .testimonials-group:last-child {
+    display: flex;
     justify-content: center;
 }
 
 .testimonials-group:last-child .testimonial-card {
     max-width: 370px;
+    margin: 0 auto;
 }
 
 .testimonial-card {
@@ -2392,7 +2394,7 @@ video::-webkit-media-controls-panel {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 35px;
     max-width: 850px;
     margin: 0 auto;
@@ -3048,6 +3050,8 @@ footer h4 {
     
     .pricing-card {
         padding: 30px;
+        width: 100%;
+        margin-bottom: 20px;
     }
     
     .footer-grid {
@@ -3057,6 +3061,22 @@ footer h4 {
     
     .cta-buttons {
         flex-direction: column;
+    }
+    
+    .testimonials-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+        max-width: 100%;
+    }
+    
+    .pricing-grid {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 450px;
     }
 }
 

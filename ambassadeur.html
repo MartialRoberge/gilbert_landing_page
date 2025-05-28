@@ -38,6 +38,10 @@
             padding: 0 5%;
             max-width: 1400px;
             margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         header .logo img {
@@ -51,6 +55,85 @@
             margin: 0 15px;
             text-decoration: none;
             transition: all 0.3s ease;
+        }
+        
+        /* Styles pour le menu hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        
+        /* Styles pour le menu mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(125deg, #1a3cad 0%, #2b5cc5 40%, #4a78d3 80%, #6a95e0 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                z-index: 1000;
+                padding: 50px 0;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 18px;
+                color: black !important;
+                font-weight: 600;
+            }
+            
+            /* Ru00e8gle spu00e9cifique pour s'assurer que les liens sont noirs */
+            @media (max-width: 768px) {
+                header .nav-links a {
+                    color: black !important;
+                }
+                
+                header .nav-links a:hover {
+                    color: #333 !important;
+                    text-shadow: none !important;
+                }
+            }
         }
         
         /* Changer la couleur au survol pour qu'elle soit blanche avec un effet de luminositu00e9 */
