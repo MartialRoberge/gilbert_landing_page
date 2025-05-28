@@ -177,6 +177,200 @@
                     transform: translateY(-3px);
                     box-shadow: 0 10px 20px rgba(57, 81, 198, 0.2);
                 }
+                
+                /* Styles pour la section FAQ */
+                .faq {
+                    padding: 100px 0;
+                    background: linear-gradient(135deg, #f9faff 0%, #f0f4ff 100%);
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .faq::before {
+                    content: '';
+                    position: absolute;
+                    top: -150px;
+                    right: -150px;
+                    width: 400px;
+                    height: 400px;
+                    background: radial-gradient(circle, rgba(100, 149, 237, 0.15) 0%, rgba(100, 149, 237, 0.05) 50%, transparent 70%);
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                
+                .faq::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -100px;
+                    left: -100px;
+                    width: 300px;
+                    height: 300px;
+                    background: radial-gradient(circle, rgba(57, 81, 198, 0.1) 0%, rgba(57, 81, 198, 0.05) 50%, transparent 70%);
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                
+                .faq .container {
+                    position: relative;
+                    z-index: 2;
+                }
+                
+                .faq-header {
+                    text-align: center;
+                    margin-bottom: 60px;
+                }
+                
+                .faq-header .section-title {
+                    margin-bottom: 15px;
+                }
+                
+                .faq-container {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 25px;
+                }
+                
+                @media (max-width: 900px) {
+                    .faq-container {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                
+                .faq-item {
+                    background: white;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+                    overflow: hidden;
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    border: 1px solid rgba(230, 230, 250, 0.5);
+                    position: relative;
+                }
+                
+                .faq-item::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 4px;
+                    height: 0;
+                    background: linear-gradient(to bottom, #6495ED, #3951c6);
+                    transition: height 0.4s ease;
+                }
+                
+                .faq-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 35px rgba(57, 81, 198, 0.1);
+                }
+                
+                .faq-item.active {
+                    box-shadow: 0 20px 40px rgba(57, 81, 198, 0.15);
+                    border-color: rgba(100, 149, 237, 0.3);
+                }
+                
+                .faq-item.active::before {
+                    height: 100%;
+                }
+                
+                .faq-question {
+                    padding: 25px 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    position: relative;
+                    gap: 20px;
+                }
+                
+                .faq-icon-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                
+                .faq-question-icon {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(100, 149, 237, 0.1);
+                    border-radius: 50%;
+                    color: #3951c6;
+                    font-size: 18px;
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                }
+                
+                .faq-item.active .faq-question-icon {
+                    background: rgba(100, 149, 237, 0.2);
+                    transform: scale(1.1);
+                }
+                
+                .faq-question h3 {
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #333;
+                    flex-grow: 1;
+                }
+                
+                .faq-toggle-icon {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(57, 81, 198, 0.08);
+                    border-radius: 50%;
+                    color: #3951c6;
+                    transition: all 0.4s ease;
+                    flex-shrink: 0;
+                }
+                
+                .faq-item.active .faq-toggle-icon {
+                    background: #3951c6;
+                    color: white;
+                    transform: rotate(180deg);
+                }
+                
+                .faq-answer {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+                
+                .faq-answer-content {
+                    padding: 0 30px 30px 85px;
+                    position: relative;
+                }
+                
+                .faq-answer p {
+                    margin: 0;
+                    line-height: 1.7;
+                    color: #555;
+                    font-size: 16px;
+                }
+                
+                .faq-highlight {
+                    color: #3951c6;
+                    font-weight: 600;
+                }
+                
+                .faq-visual-element {
+                    position: absolute;
+                    top: 50%;
+                    right: -100px;
+                    transform: translateY(-50%);
+                    width: 200px;
+                    height: 200px;
+                    background: radial-gradient(circle, rgba(100, 149, 237, 0.15) 0%, rgba(100, 149, 237, 0.05) 50%, transparent 70%);
+                    border-radius: 50%;
+                    z-index: 0;
+                    opacity: 0.7;
+                    pointer-events: none;
+                }
             </style>
 
             <div class="container">
@@ -318,7 +512,7 @@
                             <ul class="key-points">
                                 <li><span class="key-emoji">👉</span> Intégration native avec Zoom, Teams, Meet...</li>
                                 <li><span class="key-emoji">🔍</span> Recherche intelligente par contenu, date, ou participant</li>
-                                <li><span class="key-emoji">🇫🇷</span> Données hébergées en France – conformité RGPD</li>
+                                <li><span class="key-emoji">🇪🇺</span> Données hébergées en Europe – conformité RGPD</li>
                                 <li><span class="key-emoji">🤖</span> Assistant IA pour retrouver instantanément une décision ou un sujet évoqué</li>
                             </ul>
                             <p class="details-summary"><span class="summary-dot"></span> Un espace unique, sécurisé et intelligent pour piloter vos réunions.</p>
@@ -554,7 +748,7 @@
                             <li><i class="fas fa-file-export"></i> Exports PDF & Markdown</li>
                             <li><i class="fas fa-calendar"></i> Intégration calendrier</li>
                             <li><i class="fas fa-headset"></i> Support prioritaire</li>
-                            <li><i class="fas fa-server"></i> Données hébergées en France</li>
+                            <li><i class="fas fa-server"></i> Données hébergées en Europe</li>
                             <li><i class="fas fa-star"></i> Accès aux nouvelles fonctionnalités en avant-première</li>
                             <li><i class="fas fa-lightbulb"></i> Influence sur les futures fonctionnalités</li>
                         </ul>
@@ -582,6 +776,133 @@
                         </ul>
                         
                         <a href="ambassadeur.html#ambassador-form" class="cta-button primary full-width">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="faq-visual-element"></div>
+            <div class="container">
+                <div class="faq-header">
+                    <h2 class="section-title">Questions fréquentes</h2>
+                    <p class="section-subtitle">Tout ce que vous devez savoir sur Gilbert</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <h3>Comment fonctionne Gilbert concrètement ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Gilbert utilise l'<span class="faq-highlight">intelligence artificielle</span> pour transformer automatiquement l'audio de vos réunions en comptes rendus structurés et personnalisés. Notre technologie transcrit d'abord la conversation, puis l'analyse pour en extraire les points clés, les décisions et les actions à entreprendre, le tout dans un format adapté à vos besoins spécifiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Mes données sont-elles en sécurité avec Gilbert ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Absolument. En tant que solution <span class="faq-highlight">100% souveraine</span>, toutes vos données sont hébergées exclusivement en Europe, conformément aux réglementations RGPD. Nous ne partageons jamais vos informations avec des tiers et utilisons le chiffrement de bout en bout pour garantir la confidentialité de vos réunions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <h3>Que signifie "devenir ambassadeur" ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Le programme Ambassadeur vous permet de bénéficier de Gilbert à un <span class="faq-highlight">tarif préférentiel</span> tout en influençant directement son évolution. En tant qu'Ambassadeur, vous avez accès à toutes les fonctionnalités premium, un support prioritaire, et la possibilité de suggérer de nouvelles fonctionnalités qui seront développées en priorité.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <h3>Gilbert s'intègre-t-il avec mes outils existants ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Oui, Gilbert est conçu pour s'intégrer facilement à votre écosystème d'outils. Nous proposons des <span class="faq-highlight">intégrations natives</span> avec les principaux calendriers, plateformes de visioconférence, et outils de gestion de projet. Pour les besoins spécifiques, notre offre Enterprise inclut des intégrations personnalisées via notre API dédiée.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Combien de temps faut-il pour générer un compte rendu ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>La génération d'un compte rendu prend généralement entre <span class="faq-highlight">2 et 5 minutes</span> après la fin de votre réunion, selon la durée de celle-ci. Pour une réunion d'une heure, vous recevrez votre compte rendu personnalisé en moins de 5 minutes, vous permettant de partager les résultats immédiatement avec les participants.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-icon-wrapper">
+                                <div class="faq-question-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h3>Quels formats d'export sont disponibles ?</h3>
+                            </div>
+                            <div class="faq-toggle-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Gilbert propose plusieurs formats d'export pour vos comptes rendus : <span class="faq-highlight">PDF, Markdown, et texte brut</span>. Vous pouvez également les partager directement via un lien sécurisé ou les intégrer à vos outils de gestion de projet comme Notion, Trello ou Asana grâce à nos intégrations.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -632,8 +953,7 @@
                     <h4>Contact</h4>
                     <p><i class="fas fa-phone"></i> 07 50 94 75 43</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/lexiapro/?viewAsMember=true" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -647,5 +967,63 @@
     <script src="vanilla-tilt.js"></script>
     <script src="script.js"></script>
     <script src="dropdown.js"></script>
+    
+    <script>
+        // Script pour la FAQ dynamique et interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            // Animation d'entrée pour les éléments FAQ
+            setTimeout(() => {
+                faqItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 300);
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggleIcon = item.querySelector('.faq-toggle-icon i');
+                
+                // Initialisation - toutes les réponses sont cachées
+                answer.style.maxHeight = '0';
+                
+                // Ajouter un effet de survol
+                item.addEventListener('mouseenter', () => {
+                    if (!item.classList.contains('active')) {
+                        item.style.transform = 'translateY(-5px)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    if (!item.classList.contains('active')) {
+                        item.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                question.addEventListener('click', () => {
+                    // Vérifier si cet élément est actuellement ouvert
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Fermer tous les éléments
+                    faqItems.forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        faqItem.querySelector('.faq-answer').style.maxHeight = '0';
+                        faqItem.style.transform = 'translateY(0)';
+                    });
+                    
+                    // Si l'élément n'était pas ouvert, l'ouvrir
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        item.style.transform = 'translateY(-5px)';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

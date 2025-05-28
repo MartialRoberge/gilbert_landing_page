@@ -23,6 +23,8 @@ function sendEmail(event) {
     // Préparer les paramètres pour l'email
     const templateParams = {
         to_name: "Mathis",
+        to_email: "mathis@lexiapro.fr", // Email principal
+        cc_email: "contact@gilbert-ia.fr, martial@lexiapro.fr, hugo@lexiapro.fr", // Copies à ces adresses
         from_name: document.getElementById('name').value,
         from_email: document.getElementById('email').value,
         company: document.getElementById('company').value,
@@ -33,9 +35,15 @@ function sendEmail(event) {
     };
     
     // Envoyer l'email via EmailJS
-    // Note: Il reste à créer un template dans votre compte EmailJS
+    // IMPORTANT: Vous devez créer un template dans votre compte EmailJS
     // Pour créer un template, allez sur https://dashboard.emailjs.com/admin/templates
-    emailjs.send("service_05nyg6s", "template_id", templateParams, "Kzp7Om73h9_PZ6ElQ")
+    // Puis remplacez 'template_xxxxxxx' ci-dessous par votre ID de template réel
+    
+    // Afficher un message dans la console pour le débogage
+    console.log('Envoi du formulaire avec les paramètres:', templateParams);
+    
+    // Utilisation du template avec l'ID correct
+    emailjs.send("service_05nyg6s", "template_931hqxy", templateParams, "Kzp7Om73h9_PZ6ElQ")
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             // Rediriger vers la page de remerciement

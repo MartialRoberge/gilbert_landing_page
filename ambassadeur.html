@@ -991,7 +991,7 @@
         }
         
         .event-content p {
-            color: rgba(255, 255, 255, 0.8);
+            color: white;
             line-height: 1.8;
             margin-bottom: 0;
             font-size: 1.05rem;
@@ -1765,58 +1765,66 @@
                     </div>
                     
                     <div class="timeline-events">
-                        <div class="timeline-event" data-year="2022">
-                            <div class="event-date">2022</div>
+                        <div class="timeline-event" data-year="2024">
+                            <div class="event-date">2024</div>
                             <div class="event-content">
                                 <h3>Les débuts</h3>
-                                <p>Naissance de l'idée de Gilbert : créer une IA française et souveraine dédiée aux comptes rendus de réunion.</p>
+                                <p><strong>Objectif</strong> : Démontrer qu'un compte rendu de réunion peut être instantané et utile.</p>
+                                <ul style="color: white;">
+                                    <li>Prototype testé avec des utilisateurs terrain</li>
+                                    <li>Résumés envoyés en quelques minutes</li>
+                                    <li>Premiers retours : gain de clarté et de temps</li>
+                                </ul>
                                 <div class="event-icon">
                                     <i class="fas fa-lightbulb"></i>
                                 </div>
-
                             </div>
                         </div>
                         
-                        <div class="timeline-event" data-year="2023">
-                            <div class="event-date">2023</div>
+                        <div class="timeline-event" data-year="fin 2024">
+                            <div class="event-date">fin 2024</div>
                             <div class="event-content">
-                                <h3>Développement du prototype</h3>
-                                <p>Création du premier prototype fonctionnel et tests avec des utilisateurs pilotes dans plusieurs entreprises françaises.</p>
+                                <h3>Le passage à l'usage</h3>
+                                <p><strong>Objectif</strong> : Transformer l'essai, convaincre en conditions réelles.</p>
+                                <ul style="color: white;">
+                                    <li>Intégration dans les routines d'équipes</li>
+                                    <li>Personnalisation par contexte métier</li>
+                                    <li>Comptes rendus orientés action</li>
+                                </ul>
                                 <div class="event-icon">
-                                    <i class="fas fa-code"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="timeline-event active" data-year="2024">
-                            <div class="event-date">2024</div>
-                            <div class="event-content">
-                                <h3>Lancement officiel</h3>
-                                <p>Gilbert est officiellement lancé sur le marché français et européen, avec déjà plus de 350 entreprises utilisatrices.</p>
-                                <div class="event-icon">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-event" data-year="2025">
+                        <div class="timeline-event active" data-year="2025">
                             <div class="event-date">2025</div>
                             <div class="event-content">
-                                <h3>Expansion internationale</h3>
-                                <p>Développement de nouvelles fonctionnalités et expansion vers de nouveaux marchés internationaux tout en préservant notre souveraineté.</p>
+                                <h3>Gilbert en 2025</h3>
+                                <p><strong>Objectif</strong> : Une solution fiable, conforme, prête à l'emploi.</p>
+                                <ul style="color: white;">
+                                    <li>Adoptée par des professionnels exigeants</li>
+                                    <li>Résumés et plans d'action en quelques clics</li>
+                                    <li><strong>100% conforme RGPD</strong>, hébergement en France</li>
+                                </ul>
                                 <div class="event-icon">
-                                    <i class="fas fa-globe-europe"></i>
+                                    <i class="fas fa-shield-alt"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="timeline-event" data-year="2026">
-                            <div class="event-date">2026</div>
+                        <div class="timeline-event" data-year="Demain">
+                            <div class="event-date">Demain</div>
                             <div class="event-content">
-                                <h3>Vision pour l'avenir</h3>
-                                <p>Devenir le leader européen des solutions d'IA pour la productivité en entreprise, avec un écosystème complet d'outils intelligents.</p>
+                                <h3>Gilbert demain</h3>
+                                <p><strong>Objectif</strong> : Devenir un standard souverain du compte rendu.</p>
+                                <ul style="color: white;">
+                                    <li>Solution connectée aux outils métier</li>
+                                    <li><strong>Modèles de reconnaissance vocale</strong> propres</li>
+                                    <li>Solution <strong>totalement souveraine et sécurisée</strong></li>
+                                </ul>
                                 <div class="event-icon">
-                                    <i class="fas fa-chart-line"></i>
+                                    <i class="fas fa-flag"></i>
                                 </div>
                             </div>
                         </div>
@@ -1930,11 +1938,9 @@
                 
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> contact@gilbert-ia.fr</p>
-                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p><i class="fas fa-phone"></i> 07 50 94 75 43</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/lexiapro/?viewAsMember=true" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -2065,7 +2071,7 @@
             const timelineEvents = document.querySelectorAll('.timeline-event');
             
             // Positions des événements sur la timeline (en pourcentage de la hauteur)
-            const eventPositions = [0.2, 0.35, 0.5, 0.65, 0.8];
+            const eventPositions = [0.2, 0.35, 0.5, 0.65, 0.75];
             
             // Fonction pour mettre à jour la timeline en fonction du scroll
             function updateTimeline() {
