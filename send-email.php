@@ -5,12 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
     $company = $_POST['company'] ?? '';
-    $position = $_POST['position'] ?? '';
+    $phone = $_POST['phone'] ?? '';
     $linkedin = $_POST['linkedin'] ?? '';
     $motivation = $_POST['motivation'] ?? '';
     
     // Vérifier que les champs obligatoires sont remplis
-    if (empty($name) || empty($email) || empty($company) || empty($position) || empty($motivation)) {
+    if (empty($name) || empty($email) || empty($company) || empty($phone) || empty($motivation)) {
         echo json_encode(['success' => false, 'message' => 'Veuillez remplir tous les champs obligatoires.']);
         exit;
     }
@@ -19,15 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "mathis@lexiapro.fr";
     
     // Sujet de l'email
-    $subject = "Nouvelle candidature d'ambassadeur Gilbert";
+    $subject = "Nouvelle inscription liste d'attente Gilbert";
     
     // Corps de l'email en HTML
     $message = "<html><body>";
-    $message .= "<h2>Nouvelle candidature d'ambassadeur Gilbert</h2>";
+    $message .= "<h2>Nouvelle inscription liste d'attente Gilbert</h2>";
     $message .= "<p><strong>Nom:</strong> $name</p>";
     $message .= "<p><strong>Email:</strong> $email</p>";
     $message .= "<p><strong>Entreprise:</strong> $company</p>";
-    $message .= "<p><strong>Poste:</strong> $position</p>";
+    $message .= "<p><strong>Téléphone:</strong> $phone</p>";
     $message .= "<p><strong>LinkedIn:</strong> $linkedin</p>";
     $message .= "<p><strong>Motivation:</strong><br>" . nl2br($motivation) . "</p>";
     $message .= "</body></html>";

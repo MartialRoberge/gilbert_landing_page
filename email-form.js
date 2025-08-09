@@ -28,10 +28,12 @@ function sendEmail(event) {
         from_name: document.getElementById('name').value,
         from_email: document.getElementById('email').value,
         company: document.getElementById('company').value,
-        position: document.getElementById('position').value,
+        phone: document.getElementById('phone').value,
+        // Conserver la clé 'position' pour compatibilité template, avec la valeur du téléphone
+        position: document.getElementById('phone').value,
         linkedin: document.getElementById('linkedin').value,
         motivation: document.getElementById('motivation').value,
-        subject: "Nouvelle candidature d'ambassadeur Gilbert"
+        subject: "Nouvelle inscription liste d'attente Gilbert"
     };
     
     // Envoyer l'email via EmailJS

@@ -1825,8 +1825,8 @@ video:focus {
 }
 
 video::-webkit-media-controls-panel {
-    background: rgba(57, 81, 198, 0.3);
-    backdrop-filter: blur(5px);
+    background: initial !important;
+    backdrop-filter: none !important;
 }
 
 .video-controls-overlay {
