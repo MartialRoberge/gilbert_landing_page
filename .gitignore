@@ -26,6 +26,10 @@ coverage
 *.webm
 assets/images/img/Demo_Gilbert.mov
 
+# Allow committing the local demo video assets
+!assets/demo-gilbert.mp4
+!assets/demo-gilbert.mov
+
 # Dependency directories
 node_modules/
 jspm_packages/

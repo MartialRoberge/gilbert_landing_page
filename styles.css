@@ -1759,6 +1759,11 @@ nav {
     z-index: 1;
 }
 
+/* Meilleure ancre: tenir compte du header fixe */
+#demo {
+    scroll-margin-top: 90px;
+}
+
 /* Transition droite entre sections */
 
 .video-container {
@@ -3095,6 +3100,34 @@ footer h4 {
         width: 100%;
         max-width: 450px;
     }
+
+    /* Empilement des cartes d'action pour une meilleure lisibilité */
+    .action-card,
+    .action-card.second {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .screenshot {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .video-frame {
+        margin: 24px auto 60px;
+    }
+
+    .play-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3126,5 +3159,17 @@ footer h4 {
     
     .section-subtitle-strong {
         font-size: 1.2rem;
+    }
+
+    /* Ajustements fins mobile */
+    .cta-buttons {
+        gap: 10px;
+    }
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+    .video-frame {
+        margin: 16px auto 40px;
     }
 }

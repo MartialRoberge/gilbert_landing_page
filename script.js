@@ -261,40 +261,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const playButton = document.getElementById('play-button');
     const videoPreview = document.getElementById('video-preview');
     const videoEmbed = document.getElementById('video-embed');
-    
-    if (playButton && videoPreview && videoEmbed) {
-        playButton.addEventListener('click', function() {
-            // 1. Cacher la prévisualisation
-            videoPreview.style.display = 'none';
-            
-            // 2. Afficher le conteneur de la vidéo
-            videoEmbed.style.display = 'block';
-            
-            // 3. Insérer l'iframe YouTube
-            videoEmbed.innerHTML = `
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    style="border: none; outline: none;"
-                ></iframe>
-            `;
-        });
+
+    function openDemoVideo() {
+        if (!videoPreview || !videoEmbed) return;
+        // Cacher la prévisualisation
+        videoPreview.style.display = 'none';
+        // Afficher le conteneur de la vidéo
+        videoEmbed.style.display = 'block';
+        // Empêcher tout iframe externe résiduel
+        videoEmbed.querySelectorAll('iframe').forEach(node => node.remove());
+        // Récupérer la vidéo existante dans le DOM et la jouer
+        const localVideo = document.getElementById('gilbert-demo-video');
+        if (localVideo) {
+            try { localVideo.load(); } catch(e) {}
+            localVideo.play().catch(() => {});
+        }
     }
 
-    // Smooth scroll for anchor links
+    if (playButton) {
+        playButton.addEventListener('click', openDemoVideo);
+    }
+
+    // Smooth scroll for anchor links (sauf #demo, géré spécifiquement pour lecture vidéo)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (targetId === '#demo') return; // laisser le handler dédié gérer #demo
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for fixed header
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
@@ -453,14 +450,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialiser le slider
     updateSlider();
 
-    // Handle video modal if needed
-    const demoButton = document.querySelector('a[href="#demo"]');
+    // Tous les liens vers #demo: scroll + lecture automatique de la vidéo
     const videoSection = document.querySelector('#demo');
-    
-    if (demoButton && videoSection) {
-        demoButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            videoSection.scrollIntoView({ behavior: 'smooth' });
+    const demoLinks = document.querySelectorAll('a[href="#demo"]');
+    if (videoSection && demoLinks.length) {
+        demoLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Fermer le menu mobile si ouvert
+                const navLinksEl = document.querySelector('.nav-links');
+                const hamburgerEl = document.querySelector('.hamburger');
+                if (navLinksEl && navLinksEl.classList.contains('active')) {
+                    navLinksEl.classList.remove('active');
+                }
+                if (hamburgerEl && hamburgerEl.classList.contains('active')) {
+                    hamburgerEl.classList.remove('active');
+                }
+                // Scroll jusqu'à la section demo
+                window.scrollTo({
+                    top: videoSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                // Lancer la vidéo après un court délai pour laisser le scroll démarrer
+                setTimeout(openDemoVideo, 300);
+            });
         });
     }
 });
